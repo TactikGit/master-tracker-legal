@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Master Tracker – Connecting QuickBooks</title>
+<style>
+  body { font: 16px/1.6 system-ui, "Segoe UI", sans-serif; max-width: 560px; margin: 15vh auto; padding: 0 16px; text-align: center; color: #1a1a19; background: #fff; }
+  @media (prefers-color-scheme: dark) { body { background: #1a1a19; color: #f2f2f0; } a { color: #6da7ec; } }
+</style>
+</head>
+<body>
+<p>Returning to Master Tracker…</p>
+<p><small>If nothing happens, make sure Master Tracker is running on this computer, then <a id="go" href="#">click here</a>.</small></p>
+<script>
+  // Intuit sends the browser here (HTTPS) after the admin approves the connection.
+  // This page only forwards Intuit's one-time answer to the Master Tracker running on this same computer.
+  var target = 'http://localhost:3700/qb/callback' + location.search;
+  document.getElementById('go').href = target;
+  location.replace(target);
+</script>
+</body>
+</html>
